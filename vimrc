@@ -6,7 +6,7 @@ set hlsearch
 set linebreak
 set breakat+=-
 syntax enable
-set showbreak=\ \ \ \ 
+set showbreak=>>>>
 set tabstop=4
 set softtabstop=4
 set expandtab
@@ -17,7 +17,9 @@ highlight UnwantedTabs ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 match UnwantedTabs /\t\+/
 syntax on
-colorscheme desertEx
+if has("gui_running")
+  colorscheme desertEx
+endif
 set backspace=indent,eol,start
 set splitbelow
 set splitright
