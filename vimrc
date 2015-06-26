@@ -31,8 +31,6 @@ else
   set guifont=Consolas:h10
   set fileformats=dos
 endif
-set splitbelow
-set splitright
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
