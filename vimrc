@@ -28,9 +28,12 @@ highlight NonText guifg=gray30
 set laststatus=2
 if has("gui_macvim")
   set guifont=Monaco:h15
-else
+elseif
+  set lines=999 columns=999
   set guifont=Consolas:h10
-  set fileformats=dos
+endif
+if has("gui_running")
+  au GUIEnter * simalt ~x
 endif
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
