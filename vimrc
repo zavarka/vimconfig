@@ -1,5 +1,5 @@
-" execute pathogen#infect()
-" let g:airline#extensions#tabline#enabled=1
+execute pathogen#infect()
+let g:airline#extensions#tabline#enabled=1
 filetype plugin indent on
 set number
 set hlsearch
@@ -23,7 +23,6 @@ set splitbelow
 set splitright
 set listchars=tab:>\ ,eol:$
 highlight NonText guifg=gray30
-" set lines=999 columns=999
 set laststatus=2
 if has("gui_macvim")
   set guifont=Monaco:h15
