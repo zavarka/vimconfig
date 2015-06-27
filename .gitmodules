@@ -1,6 +1,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "bundle/desertex"]
-	path = bundle/desertex
-	url = https://github.com/mbbill/desertex
+[submodule "bundle/feral-vim"]
+	path = bundle/feral-vim
+	url = https://github.com/jedverity/feral-vim.git
