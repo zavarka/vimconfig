@@ -23,6 +23,7 @@ set splitright
 set listchars=tab:>\ ,eol:$
 highlight NonText guifg=gray30
 set laststatus=2
+set wildmenu
 
 if has("gui_macvim")
   set guifont=Monaco:h15
@@ -41,3 +42,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" ==================================================
+" Configure file type settings
+
+if has("autocmd")
+  autocmd BufNewFile,BufRead sources* setfiletype=make
+endif
