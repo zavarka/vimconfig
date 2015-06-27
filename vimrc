@@ -47,5 +47,5 @@ nnoremap <C-H> <C-W><C-H>
 " Configure file type settings
 
 if has("autocmd")
-  autocmd BufNewFile,BufRead sources* setfiletype=make
+  autocmd BufNewFile,BufRead sources,*.inc,makefil* setfiletype=make
 endif
