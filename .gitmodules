@@ -4,3 +4,6 @@
 [submodule "bundle/feral-vim"]
 	path = bundle/feral-vim
 	url = https://github.com/jedverity/feral-vim.git
+[submodule "bundle/desertEx"]
+	path = bundle/desertEx
+	url = https://github.com/vim-scripts/desertEx.git
