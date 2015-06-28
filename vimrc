@@ -21,7 +21,6 @@ set backspace=indent,eol,start
 set splitbelow
 set splitright
 set listchars=tab:>\ ,eol:$
-highlight NonText guifg=gray30
 set laststatus=2
 set wildmenu
 
@@ -35,7 +34,12 @@ endif
 
 if has("gui_running")
   colorscheme desertEx
+  highlight NonText guifg=maroon
+  highlight SpecialKey guifg=maroon
 endif
+
+" Unicode chars: · ¶ ↲ « » ¬ ▸
+set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
