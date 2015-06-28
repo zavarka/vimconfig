@@ -25,21 +25,21 @@ set laststatus=2
 set wildmenu
 
 if has("gui_macvim")
-  set guifont=Monaco:h15
+    set guifont=Monaco:h15
 elseif has("gui_win32")
-  au GUIEnter * simalt ~x
-  set lines=999 columns=999
-  set guifont=Consolas:h10
+    au GUIEnter * simalt ~x
+    set lines=999 columns=999
+    set guifont=Consolas:h10
 endif
 
 if has("gui_running")
-  colorscheme desertEx
-  highlight NonText guifg=maroon
-  highlight SpecialKey guifg=maroon
+    colorscheme desertEx
+    highlight NonText guifg=maroon
+    highlight SpecialKey guifg=maroon
 endif
 
 " Unicode chars: · ¶ ↲ « » ¬ ▸
-set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
+set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
 
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -51,5 +51,19 @@ nnoremap <C-H> <C-W><C-H>
 " Configure file type settings
 
 if has("autocmd")
-  autocmd BufNewFile,BufRead sources,*.inc,makefil* setfiletype=make
+    autocmd BufNewFile,BufRead sources,*.inc,makefil* setfiletype=make
 endif
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
