@@ -23,6 +23,20 @@ set splitright
 set listchars=tab:>\ ,eol:$
 set laststatus=2
 set wildmenu
+set hidden
+set ignorecase
+set smartcase
+set encoding=utf8
+set autoindent
+set smartindent
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
 
 if has("gui_macvim")
     set guifont=Monaco:h15
@@ -68,3 +82,8 @@ endfunction
 
 nmap <silent><leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
+
+" nmap <M-[> <<
+" nmap <M-]> >>
+" vmap <M-[> <gv
+" vmap <M-]> >gv
