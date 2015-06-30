@@ -29,6 +29,10 @@ set smartcase
 set encoding=utf8
 set autoindent
 set smartindent
+set history=700
+set scrolloff=3
+set whichwrap+=<,>
+set incsearch
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -99,3 +103,5 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
+nmap <leader>q :q!<CR>
