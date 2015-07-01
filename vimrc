@@ -57,7 +57,7 @@ if has("gui_running")
 endif
 
 " Unicode chars: · ¶ ↲ « » ¬ ▸
-set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
+set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -87,21 +87,24 @@ endfunction
 nmap <silent><leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
 
-" nmap <M-[> <<
-" nmap <M-]> >>
-" vmap <M-[> <gv
-" vmap <M-]> >gv
-
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <M-[> <<
+nmap <M-]> >>
+vmap <M-[> <gv
+vmap <M-]> >gv
 
 if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
+    nmap <D-[> <M-[>
+    nmap <D-]> <M-]>
+    vmap <D-[> <M-[>
+    vmap <D-]> <M-]>
 endif
 
-nmap <leader>q :q!<CR>
+nmap <leader>q :qa<CR>
