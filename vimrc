@@ -33,6 +33,7 @@ set history=700
 set scrolloff=3
 set whichwrap+=<,>
 set incsearch
+set noswapfile
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -70,6 +71,7 @@ nnoremap <C-H> <C-W><C-H>
 
 if has("autocmd")
     autocmd BufNewFile,BufRead sources,*.inc,makefil* set filetype=make
+    autocmd BufNewFile,BufRead *.ds,*.wtl set filetype=xml
 endif
 
 function! Preserve(command)
