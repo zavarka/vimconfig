@@ -1,12 +1,13 @@
 execute pathogen#infect()
-" let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#whitespace#enabled=0
 filetype plugin indent on
 set number
 set hlsearch
 set linebreak
 set breakat+=-
 syntax enable
-set showbreak=>>>>
+" set showbreak=>>>>
 set tabstop=4
 set softtabstop=4
 set expandtab
