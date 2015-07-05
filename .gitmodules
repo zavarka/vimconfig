@@ -22,3 +22,6 @@
 [submodule "bundle/Zenburn"]
 	path = bundle/Zenburn
 	url = https://github.com/jnurmine/Zenburn
+[submodule "bundle/vim-colors-github"]
+	path = bundle/vim-colors-github
+	url = https://github.com/acarapetis/vim-colors-github
