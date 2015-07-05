@@ -1,5 +1,5 @@
 execute pathogen#infect()
-let g:airline#extensions#tabline#enabled=1
+" let g:airline#extensions#tabline#enabled=1
 filetype plugin indent on
 set number
 set hlsearch
@@ -97,6 +97,17 @@ nmap <M-[> <<
 nmap <M-]> >>
 vmap <M-[> <gv
 vmap <M-]> >gv
+map <M-1> 1gt
+map <M-2> 2gt
+map <M-3> 3gt
+map <M-4> 4gt
+map <M-5> 5gt
+map <M-6> 6gt
+map <M-7> 7gt
+map <M-8> 8gt
+map <M-9> 9gt
+map <M-0> :tablast<CR>
+map <M-t> :tabnew<CR>
 
 if has("mac") || has("macunix")
     nmap <D-j> <M-j>
@@ -107,6 +118,22 @@ if has("mac") || has("macunix")
     nmap <D-]> <M-]>
     vmap <D-[> <M-[>
     vmap <D-]> <M-]>
+    map <D-1> <M-1>
+    map <D-2> <M-2>
+    map <D-3> <M-3>
+    map <D-4> <M-4>
+    map <D-5> <M-5>
+    map <D-6> <M-6>
+    map <D-7> <M-7>
+    map <D-8> <M-8>
+    map <D-9> <M-9>
+    map <D-0> <M-0>
+    map <D-t> <M-t>
 endif
 
 nmap <leader>q :qa<CR>
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
