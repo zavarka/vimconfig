@@ -35,6 +35,7 @@ set scrolloff=3
 set whichwrap+=<,>
 set incsearch
 set noswapfile
+set clipboard=unnamed
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -53,8 +54,8 @@ elseif has("gui_win32")
 endif
 
 if has("gui_running")
-"    colorscheme desertEx
-    colorscheme solarized
+    colorscheme desertEx
+"    colorscheme solarized
     highlight NonText guifg=maroon
     highlight SpecialKey guifg=maroon
 endif
@@ -109,7 +110,6 @@ map <M-7> 7gt
 map <M-8> 8gt
 map <M-9> 9gt
 map <M-0> :tablast<CR>
-map <M-t> :tabnew<CR>
 
 if has("mac") || has("macunix")
     nmap <D-j> <M-j>
@@ -130,7 +130,6 @@ if has("mac") || has("macunix")
     map <D-8> <M-8>
     map <D-9> <M-9>
     map <D-0> <M-0>
-    map <D-t> <M-t>
 endif
 
 nmap <leader>q :qa<CR>
