@@ -25,3 +25,6 @@
 [submodule "bundle/vim-colors-github"]
 	path = bundle/vim-colors-github
 	url = https://github.com/acarapetis/vim-colors-github
+[submodule "bundle/vim-capslock"]
+	path = bundle/vim-capslock
+	url = https://github.com/tpope/vim-capslock
