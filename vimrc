@@ -35,7 +35,9 @@ set scrolloff=3
 set whichwrap+=<,>
 set incsearch
 set noswapfile
-set clipboard=unnamed
+" set clipboard=unnamed
+set display=lastline
+set guioptions-=T
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -50,7 +52,7 @@ if has("gui_macvim")
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
-    set guifont=Consolas:h10
+    set guifont=Consolas:h11
 endif
 
 if has("gui_running")
