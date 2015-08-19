@@ -1,6 +1,7 @@
 execute pathogen#infect()
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#whitespace#enabled=0
+let g:LargeFile=100
 filetype plugin indent on
 set number
 set hlsearch
@@ -52,7 +53,7 @@ if has("gui_macvim")
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
-    set guifont=Consolas:h11
+    set guifont=Consolas:h10
 endif
 
 if has("gui_running")
