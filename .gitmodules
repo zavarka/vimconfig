@@ -31,3 +31,6 @@
 [submodule "bundle/LargeFile"]
 	path = bundle/LargeFile
 	url = https://github.com/vim-scripts/LargeFile
+[submodule "bundle/vim-colors-pencil"]
+	path = bundle/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git

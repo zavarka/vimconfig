@@ -1,6 +1,7 @@
 execute pathogen#infect()
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#whitespace#enabled=0
+let g:airline_theme='molokai'
 let g:LargeFile=100
 filetype plugin indent on
 set number
@@ -58,7 +59,8 @@ endif
 
 if has("gui_running")
 "    colorscheme desertEx
-    colorscheme solarized
+"    colorscheme solarized
+    colorscheme github
     set background=light
     highlight NonText guifg=maroon
     highlight SpecialKey guifg=maroon
