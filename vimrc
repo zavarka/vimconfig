@@ -57,8 +57,9 @@ elseif has("gui_win32")
 endif
 
 if has("gui_running")
-    colorscheme desertEx
-"    colorscheme solarized
+"    colorscheme desertEx
+    colorscheme solarized
+    set background=light
     highlight NonText guifg=maroon
     highlight SpecialKey guifg=maroon
 endif
