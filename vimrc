@@ -48,6 +48,7 @@ set guioptions-=T
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
+vnoremap <silent> // y/<C-R>"<CR>
 
 if has("gui_macvim")
     set guifont=Monaco:h15
@@ -63,7 +64,8 @@ if has("gui_running")
     colorscheme github
     set background=light
     highlight NonText guifg=maroon
-    highlight SpecialKey guifg=maroon
+    highlight SpecialKey guifg=maroon guibg=NONE 
+
 endif
 
 " Unicode chars: · ¶ ↲ « » ¬ ▸
