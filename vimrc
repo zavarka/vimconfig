@@ -40,17 +40,8 @@ set noswapfile
 " set clipboard=unnamed
 set display=lastline
 set guioptions-=T
-
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>
-vnoremap <silent> // y/<C-R>"<CR>
-nmap <silent><leader>cp :let @* = expand("%:p")<CR>
-nmap <silent><leader>yp :let @" = expand("%:p")<CR>
+" Unicode chars: · ¶ ↲ « » ¬ ▸
+set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 
 if has("gui_macvim")
     set guifont=Monaco:h15
@@ -61,8 +52,8 @@ elseif has("gui_win32")
 endif
 
 if has("gui_running")
-"    colorscheme desertEx
-"    colorscheme solarized
+    "    colorscheme desertEx
+    "    colorscheme solarized
     colorscheme github
     set background=light
     highlight NonText guifg=maroon
@@ -70,18 +61,8 @@ if has("gui_running")
 
 endif
 
-" Unicode chars: · ¶ ↲ « » ¬ ▸
-set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
-
-nmap <leader>l :set list!<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " ==================================================
 " Configure file type settings
-
 if has("autocmd")
     autocmd BufNewFile,BufRead sources,*.inc,makefil* set filetype=make
     autocmd BufNewFile,BufRead *.ds,*.wtl set filetype=xml
@@ -99,8 +80,25 @@ function! Preserve(command)
     call cursor(l, c)
 endfunction
 
-nmap <silent><leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap * :call VisualSelection('f')<CR>
+vnoremap # :call VisualSelection('b')<CR>
+vnoremap // y/<C-R>"<CR>
+nmap <leader>cp :let @* = expand("%:p")<CR>
+nmap <leader>yp :let @" = expand("%:p")<CR>
+nmap <leader>l :set list!<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>   
 nmap <leader>= :call Preserve("normal gg=G")<CR>
+nmap <leader>r :call Preserve("%s/\\r//ge")<CR>
 
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
