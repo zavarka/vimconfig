@@ -49,6 +49,8 @@ set guioptions-=T
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 vnoremap <silent> // y/<C-R>"<CR>
+nmap <silent><leader>cp :let @* = expand("%:p")<CR>
+nmap <silent><leader>yp :let @" = expand("%:p")<CR>
 
 if has("gui_macvim")
     set guifont=Monaco:h15
