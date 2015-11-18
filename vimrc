@@ -26,6 +26,7 @@ set splitright
 set listchars=tab:>\ ,eol:$
 set laststatus=2
 set wildmenu
+set wildmode=list:longest
 set hidden
 set ignorecase
 set smartcase
