@@ -66,6 +66,7 @@ endif
 if has("autocmd")
     autocmd BufNewFile,BufRead sources,*.inc,makefil* set filetype=make
     autocmd BufNewFile,BufRead *.ds,*.wtl set filetype=xml
+    autocmd FileType xml,html,xhtml set ts=2 sts=2 sw=2
 endif
 
 function! Preserve(command)
