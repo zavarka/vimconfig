@@ -96,8 +96,10 @@ vnoremap // y/<C-R>"<CR>
 nmap <leader>cp :let @* = expand("%:p")<CR>
 " Copy the current file's path to the unnamed register
 nmap <leader>yp :let @" = expand("%:p")<CR>
-nmap <leader>" :let @" = fnameescape(@")<CR>
-nmap <leader>* :let @* = fnameescape(@*)<CR>
+" Open a blank a blank line below
+nmap <leader>o o<Esc>
+" Open a blank a blank line above
+nmap <leader>O O<Esc>
 " Show/hide invisibles
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
