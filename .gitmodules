@@ -34,9 +34,6 @@
 [submodule "bundle/vim-colors-pencil"]
 	path = bundle/vim-colors-pencil
 	url = https://github.com/reedes/vim-colors-pencil.git
-[submodule "bundle/lusty"]
-	path = bundle/lusty
-	url = https://github.com/sjbach/lusty
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
