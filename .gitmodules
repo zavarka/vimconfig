@@ -43,3 +43,6 @@
 [submodule "bundle/Escape-Search"]
 	path = bundle/Escape-Search
 	url = https://github.com/vim-scripts/Escape-Search
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary
