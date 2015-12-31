@@ -45,7 +45,7 @@ set guioptions-=T
 set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 
 if has("gui_macvim")
-    set guifont=Monaco:h15
+    set guifont=Consolas:h14
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
@@ -87,29 +87,43 @@ endfunction
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
-vnoremap * :call VisualSelection('f')<CR>
-vnoremap # :call VisualSelection('b')<CR>
+"vnoremap * :call VisualSelection('f')<CR>
+"vnoremap # :call VisualSelection('b')<CR>
+
+" Search using visual selection as pattern
 vnoremap // y/<C-R>"<CR>
+" Copy the current file's path to the clipboard
 nmap <leader>cp :let @* = expand("%:p")<CR>
+" Copy the current file's path to the unnamed register
 nmap <leader>yp :let @" = expand("%:p")<CR>
+nmap <leader>" :let @" = fnameescape(@")<CR>
+nmap <leader>* :let @* = fnameescape(@*)<CR>
+" Show/hide invisibles
 nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>   
+" Remove trailing spaces
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+" Reindent buffer
 nmap <leader>= :call Preserve("normal gg=G")<CR>
+" Remove ^M characters
 nmap <leader>r :call Preserve("%s/\\r//ge")<CR>
-
+" Shift lines
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-nmap <M-[> <<
-nmap <M-]> >>
-vmap <M-[> <gv
-vmap <M-]> >gv
+" Indent using Tab
+nmap <Tab> >>
+vmap <Tab> >gv
+" Unindent using Shift-Tab
+nmap <S-Tab> <<
+vmap <S-Tab> <gv
+" Quit all windows
+nmap <leader>q :qa<CR>
+
 map <M-1> 1gt
 map <M-2> 2gt
 map <M-3> 3gt
@@ -120,16 +134,17 @@ map <M-7> 7gt
 map <M-8> 8gt
 map <M-9> 9gt
 map <M-0> :tablast<CR>
+map <leader>tt :tabnew<CR>
+map <leader>te :tabedit
+map <leader>tc :tabclose<CR>
+map <leader>to :tabonly<CR>
+map <leader>tm :tabmove
 
 if has("mac") || has("macunix")
     nmap <D-j> <M-j>
     nmap <D-k> <M-k>
     vmap <D-j> <M-j>
     vmap <D-k> <M-k>
-    nmap <D-[> <M-[>
-    nmap <D-]> <M-]>
-    vmap <D-[> <M-[>
-    vmap <D-]> <M-]>
     map <D-1> <M-1>
     map <D-2> <M-2>
     map <D-3> <M-3>
@@ -141,9 +156,8 @@ if has("mac") || has("macunix")
     map <D-9> <M-9>
     map <D-0> <M-0>
 endif
-
-nmap <leader>q :qa<CR>
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
