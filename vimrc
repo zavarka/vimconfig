@@ -15,9 +15,9 @@ set softtabstop=4
 set expandtab
 set shiftround
 set shiftwidth=4
-highlight ExtraWhitespace ctermbg=grey guibg=grey
+highlight ExtraWhiteSpace ctermbg=grey guibg=grey
 highlight UnwantedTabs ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+match ExtraWhiteSpace /\s\+$/
 match UnwantedTabs /\t\+/
 syntax on
 set backspace=indent,eol,start
@@ -41,26 +41,18 @@ set noswapfile
 " set clipboard=unnamed
 set display=lastline
 set guioptions-=T
+set cursorline
 " Unicode chars: · ¶ ↲ « » ¬ ▸
-set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
+set listchars=trail:·,eol:┆,tab:▶\ 
 
 if has("gui_macvim")
-    set guifont=Consolas:h14
+    set guifont=Source_Code_Pro:h14
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
-    set guifont=Consolas:h10
+    set guifont=Source_Code_Pro:h10
 endif
 
-if has("gui_running")
-    "    colorscheme desertEx
-    "    colorscheme solarized
-    colorscheme github
-    set background=light
-    highlight NonText guifg=maroon
-    highlight SpecialKey guifg=maroon guibg=NONE 
-
-endif
 
 " ==================================================
 " Configure file type settings
@@ -82,6 +74,27 @@ function! Preserve(command)
     call cursor(l, c)
 endfunction
 
+function! FixColorscheme()
+    if has("gui_running")
+        highlight NonText guifg=maroon
+        highlight SpecialKey guifg=maroon guibg=NONE 
+    endif
+endfunction
+
+if has("gui_running")
+    " colorscheme desertEx
+    " colorscheme solarized
+    " colorscheme github
+    colorscheme lucius
+    set background=light
+    call FixColorscheme()
+endif
+
+augroup mycolorschemes
+    au!
+    au ColorScheme * call FixColorscheme()
+augroup END
+
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -96,12 +109,6 @@ vnoremap // y/<C-R>"<CR>
 nmap <leader>cp :let @* = expand("%:p")<CR>
 " Copy the current file's path to the unnamed register
 nmap <leader>yp :let @" = expand("%:p")<CR>
-" Open a blank a blank line below
-nmap <leader>o o<Esc>
-" Open a blank a blank line above
-nmap <leader>O O<Esc>
-" Show/hide invisibles
-nmap <leader>l :set list!<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
