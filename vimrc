@@ -77,7 +77,8 @@ endfunction
 function! FixColorscheme()
     if has("gui_running")
         highlight NonText guifg=maroon
-        highlight SpecialKey guifg=maroon guibg=NONE 
+        highlight SpecialKey guifg=maroon guibg=NONE
+        highlight VertSplit cterm=reverse guifg=#839496 guibg=#839496
     endif
 endfunction
 
@@ -165,9 +166,10 @@ if has("mac") || has("macunix")
     map <D-9> <M-9>
     map <D-0> <M-0>
 endif
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
 
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
