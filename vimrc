@@ -1,7 +1,18 @@
 execute pathogen#infect()
-let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#whitespace#enabled=0
+" Airline customizations
 let g:airline_theme='molokai'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 let g:LargeFile=100
 filetype plugin indent on
 set number
@@ -79,6 +90,10 @@ function! FixColorscheme()
         highlight NonText guifg=maroon
         highlight SpecialKey guifg=maroon guibg=NONE
         highlight VertSplit cterm=reverse guifg=#839496 guibg=#839496
+        hi CursorIM guibg=#ff3300
+
+        if (g:colors_name =~ "lucius")
+        endif
     endif
 endfunction
 
