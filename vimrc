@@ -115,7 +115,7 @@ function! FixColorscheme()
     if has("gui_running")
         highlight NonText guifg=maroon
         highlight SpecialKey guifg=maroon guibg=NONE
-        highlight VertSplit cterm=reverse guifg=#839496 guibg=#839496
+        " highlight VertSplit cterm=reverse guifg=#839496 guibg=#839496
         highlight CursorIM guibg=#ff3300
 
         if (g:colors_name =~ "lucius")
