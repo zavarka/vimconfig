@@ -22,7 +22,7 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-let g:airline_theme='molokai'
+" let g:airline_theme='solarized'
 let g:airline_left_sep=''
 let g:airline_left_alt_sep=''
 let g:airline_right_sep=''
@@ -34,7 +34,13 @@ let g:airline_symbols.branch=''
 let g:airline_symbols.readonly=''
 let g:airline_symbols.linenr=''
 let g:LargeFile=100
+
+" BufferExplorer customizations
+let g:bufExplorerShowNoName=1
+let g:bufExplorerDefaultHelp=1
+let g:bufExplorerShowUnlisted=1
 filetype plugin indent on
+
 set number
 set hlsearch
 set linebreak
@@ -121,7 +127,7 @@ if has("gui_running")
     " colorscheme desertEx
     " colorscheme solarized
     " colorscheme github
-    colorscheme lucius
+    colorscheme gruvbox
     set background=dark
     call FixColorscheme()
 endif
@@ -150,11 +156,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Remove trailing spaces
-nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <leader>r$ :call Preserve("%s/\\s\\+$//e")<CR>
 " Reindent buffer
-nmap <leader>= :call Preserve("normal gg=G")<CR>
+nmap <leader>r= :call Preserve("normal gg=G")<CR>
 " Remove ^M characters
-nmap <leader>r :call Preserve("%s/\\r//ge")<CR>
+nmap <leader>rm :call Preserve("%s/\\r//ge")<CR>
 " Shift lines
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
@@ -167,8 +173,9 @@ vmap <Tab> >gv
 nmap <S-Tab> <<
 vmap <S-Tab> <gv
 " Quit all windows
-nmap <leader>q :qa<CR>
-
+nmap <leader>qa :qa<CR>
+" Close the current buffer
+nmap <leader>bd :bd<CR>
 map <M-1> 1gt
 map <M-2> 2gt
 map <M-3> 3gt
