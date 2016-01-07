@@ -94,7 +94,7 @@ endif
 " ==================================================
 " Configure file type settings
 if has("autocmd")
-    autocmd BufNewFile,BufRead sources,dirs,*.inc,makefil* set filetype=make
+    autocmd BufNewFile,BufRead sources,sources.*,wp.sources.*,dirs,*.inc,makefil* set filetype=make
     autocmd BufNewFile,BufRead *.wtl,*.wtq,*.man,*.mum,*.ds,*.dm,*.dc set filetype=xml
     autocmd FileType xml,html,xhtml set ts=2 sts=2 sw=2
 endif
