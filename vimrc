@@ -42,6 +42,7 @@ let g:bufExplorerShowUnlisted=1
 filetype plugin indent on
 
 set number
+set showcmd
 set hlsearch
 set linebreak
 set breakat+=-
