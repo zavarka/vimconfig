@@ -81,7 +81,8 @@ set display=lastline
 set guioptions-=T
 set cursorline
 " Unicode chars: · ¶ ↲ « » ¬ ▸
-set listchars=trail:·,eol:┆,tab:▶\ 
+set listchars=trail:·,eol:┆,tab:▶\ ,trail:░
+set eol
 
 if has("gui_macvim")
     set guifont=Source_Code_Pro:h14
