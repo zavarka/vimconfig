@@ -55,3 +55,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "bundle/vsearch.vim"]
+	path = bundle/vsearch.vim
+	url = https://github.com/BenBergman/vsearch.vim
