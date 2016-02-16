@@ -157,6 +157,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Remove highlighted matches with C-l
+nnoremap <C-L> :<C-u>nohlsearch<CR><C-L>
 " Remove trailing spaces
 nmap <leader>r$ :call Preserve("%s/\\s\\+$//e")<CR>
 " Reindent buffer
@@ -178,6 +180,7 @@ vmap <S-Tab> <gv
 nmap <leader>qa :qa<CR>
 " Close the current buffer
 nmap <leader>bd :bd<CR>
+nmap <leader>nn :noh<CR>
 map <M-1> 1gt
 map <M-2> 2gt
 map <M-3> 3gt
