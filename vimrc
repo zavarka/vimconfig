@@ -72,7 +72,7 @@ set encoding=utf8
 set autoindent
 set smartindent
 set history=700
-set scrolloff=3
+set scrolloff=0
 set whichwrap+=<,>
 set incsearch
 set noswapfile
