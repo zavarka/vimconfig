@@ -79,6 +79,7 @@ set noswapfile
 " set clipboard=unnamed
 set display=lastline
 set guioptions-=T
+set guioptions+=l
 set cursorline
 " Unicode chars: · ¶ ↲ « » ¬ ▸
 set listchars=trail:·,eol:┆,tab:▶\ ,trail:░
@@ -220,4 +221,5 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 set pastetoggle=<F2>
-
+map <silent><F3> :setlocal spell!<CR>
+map <silent><F1> :vert help<CR>
