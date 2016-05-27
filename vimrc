@@ -33,7 +33,7 @@ endif
 let g:airline_symbols.branch=''
 let g:airline_symbols.readonly=''
 let g:airline_symbols.linenr=''
-let g:LargeFile=100
+let g:LargeFile=1000
 
 " BufferExplorer customizations
 let g:bufExplorerShowNoName=1
