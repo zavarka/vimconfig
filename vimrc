@@ -83,6 +83,7 @@ set guioptions-=L
 set guioptions-=m
 set guioptions+=v
 set cursorline
+set autoread
 " Unicode chars: · ¶ ↲ « » ¬ ▸
 set listchars=trail:·,eol:┆,tab:▶\ ,trail:░
 set eol
