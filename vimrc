@@ -169,11 +169,6 @@ nmap <leader>r$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>r= :call Preserve("normal gg=G")<CR>
 " Remove ^M characters
 nmap <leader>rm :call Preserve("%s/\\r//ge")<CR>
-" Shift lines
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 " Indent using Tab
 nmap <Tab> >>
 vmap <Tab> >gv
