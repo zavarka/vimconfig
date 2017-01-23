@@ -23,10 +23,12 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 " let g:airline_theme='solarized'
-let g:airline_left_sep=''
-let g:airline_left_alt_sep=''
-let g:airline_right_sep=''
-let g:airline_right_alt_sep=''
+if has("gui_win32")
+    let g:airline_left_sep=''
+    let g:airline_left_alt_sep=''
+    let g:airline_right_sep=''
+    let g:airline_right_alt_sep=''
+endif
 if !exists('g:airline_symbols')
     let g:airline_symbols={}
 endif
@@ -136,6 +138,9 @@ if has("gui_running")
     colorscheme gruvbox
     set background=dark
     call FixColorscheme()
+else
+    colorscheme pencil
+    set background=light
 endif
 
 augroup mycolorschemes
@@ -222,3 +227,5 @@ set pastetoggle=<F2>
 map <silent><F3> :setlocal spell!<CR>
 map <silent><F1> :vert help<CR>
 map <silent><expr><F4> ':set wrap! go'.'-+'[&wrap]."=b\r"
+set mousemodel=popup_setpos
+
