@@ -160,6 +160,7 @@ augroup END
 vnoremap // y/<C-R>"<CR>
 " Copy the current file's path to the clipboard
 nmap <leader>cp :let @* = expand("%:p")<CR>
+nmap <leader>cd :let @* = expand("%:p:h")<CR>
 " Copy the current file's path to the unnamed register
 nmap <leader>yp :let @" = expand("%:p")<CR>
 nnoremap <C-J> <C-W><C-J>
@@ -227,5 +228,4 @@ set pastetoggle=<F2>
 map <silent><F3> :setlocal spell!<CR>
 map <silent><F1> :vert help<CR>
 map <silent><expr><F4> ':set wrap! go'.'-+'[&wrap]."=b\r"
-set mousemodel=popup_setpos
 
