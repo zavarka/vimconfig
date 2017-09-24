@@ -23,12 +23,12 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 " let g:airline_theme='solarized'
-if has("gui_win32")
+" if has("gui_win32")
     let g:airline_left_sep=''
     let g:airline_left_alt_sep=''
     let g:airline_right_sep=''
     let g:airline_right_alt_sep=''
-endif
+" endif
 if !exists('g:airline_symbols')
     let g:airline_symbols={}
 endif
