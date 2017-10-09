@@ -23,12 +23,12 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 " let g:airline_theme='solarized'
-if has("gui_win32")
+" if has("gui_win32")
     let g:airline_left_sep=''
     let g:airline_left_alt_sep=''
     let g:airline_right_sep=''
     let g:airline_right_alt_sep=''
-endif
+" endif
 if !exists('g:airline_symbols')
     let g:airline_symbols={}
 endif
@@ -91,7 +91,7 @@ set listchars=trail:·,eol:┆,tab:▶\ ,trail:░
 set eol
 
 if has("gui_macvim")
-    set guifont=Source_Code_Pro:h14
+    set guifont=Source_Code_Pro:h12
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
@@ -120,7 +120,7 @@ function! Preserve(command)
 endfunction
 
 function! FixColorscheme()
-    if has("gui_running")
+    if has("gui_running") || has("gui_macvim")
         highlight NonText guifg=maroon
         highlight SpecialKey guifg=maroon guibg=NONE
         " highlight VertSplit cterm=reverse guifg=#839496 guibg=#839496
@@ -131,7 +131,7 @@ function! FixColorscheme()
     endif
 endfunction
 
-if has("gui_running")
+if has("gui_running") || has("gui_macvim")
     " colorscheme desertEx
     " colorscheme solarized
     " colorscheme github
