@@ -95,7 +95,7 @@ if has("gui_macvim")
 elseif has("gui_win32")
     au GUIEnter * simalt ~x
     set lines=999 columns=999
-    set guifont=Source_Code_Pro:h9
+    set guifont=Source_Code_Pro:h10
 endif
 
 
